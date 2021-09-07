@@ -1,9 +1,3 @@
-import Televisor from './Televisor'
-import Nevera from '.Nevera'
-import Electrodomesticos from './Electrodomesticos'
-import index from 'index.html'
-
-
 
 document.getElementById("botonSubmit").addEventListener("click", function() {
     let tipo = document.getElementById("tipoProducto").value;
@@ -11,10 +5,22 @@ document.getElementById("botonSubmit").addEventListener("click", function() {
     let procedencia = document.getElementById("procedencia").value;
 });
 
-
-function mostrar(){
-    var myselect = document.getElementById("select1");
-  alert(myselect.options[myselect.selectedIndex].value);
-    //document.getElementById('divTextPulgadas').style.display = 'none';
-};
+function mostrarDatosProductos() {
+    var select = document.getElementById('select1')
+    if(select.value=="opcionTv"){
+        document.getElementById('divTextLitros').style.display = 'none'
+        document.getElementById('divTextPulgadas').style.display = ''
+        document.getElementById('divTextTdt').style.display = ''
+    }
+    if(select.value=="opcionNevera"){
+        document.getElementById('divTextPulgadas').style.display = 'none'
+        document.getElementById('divTextTdt').style.display = 'none'
+        document.getElementById('divTextLitros').style.display = ''                                     
+    }
+    if(select.value=="opcionElect"){
+        document.getElementById('divTextPulgadas').style.display = 'none'
+        document.getElementById('divTextLitros').style.display = 'none' 
+        document.getElementById('divTextTdt').style.display = 'none'                                   
+    }            
+}
 

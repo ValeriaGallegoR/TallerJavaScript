@@ -16,7 +16,7 @@
             <fieldset>
             <legend>Caracteristicas del producto</legend>
             <p>Tipo de producto:
-                <select id="select1" onChange="mostrar()">
+                <select id="select1" onChange="mostrarDatosProductos()">
                     <option value="">Seleccione</option>
                     <option value="opcionTv">Televisor</option>
                     <option value="opcionNevera">Nevera</option>  
@@ -61,25 +61,6 @@
             <legend>Resumen del inventario</legend>
         </fieldset>
            </form> 
-           <script>
-            function mostrar() {
-                var select = document.getElementById('select1')
-                if(select.value=="opcionTv"){
-                    document.getElementById('divTextLitros').style.display = 'none'
-                    document.getElementById('divTextPulgadas').style.display = ''
-                    document.getElementById('divTextTdt').style.display = ''
-                }
-                if(select.value=="opcionNevera"){
-                    document.getElementById('divTextPulgadas').style.display = 'none'
-                    document.getElementById('divTextTdt').style.display = 'none'
-                    document.getElementById('divTextLitros').style.display = ''                                     
-                }
-                if(select.value=="opcionElect"){
-                    document.getElementById('divTextPulgadas').style.display = 'none'
-                    document.getElementById('divTextLitros').style.display = 'none' 
-                    document.getElementById('divTextTdt').style.display = 'none'                                   
-                }            
-            }
-            </script>
+           <script src="./Modelos/menu.js"></script>
 </body>
 </html>
