@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario </title>
+    <script>
+    </script>    
+</head>
+<body>
+<h1>INVENTARIO DE PRODUCTOS</h1>
+   <br>
+   <!-- //action="/my-handling-form-page" method="post" -->
+        <form id="my-form">
+            <fieldset>
+            <legend>Caracteristicas del producto</legend>
+            <p>Tipo de producto:
+                <select id="select1" onChange="mostrar()">
+                    <option value="">Seleccione</option>
+                    <option value="opcionTv">Televisor</option>
+                    <option value="opcionNevera">Nevera</option>  
+                    <option value="opcionElect">Electrodomestico</option>  
+                  </select>
+            </p> 
+            <div id="divTextPulgadas" style="display:none;">
+                <input type="text" id="pulgadas" name="pulgadas" required
+                minlength="4" maxlength="8" size="30" placeholder="Ingrese el número de las pulgadas">
+            </div> 
+            <div id = "divTextTdt" style="display:none;">El tv tiene tdt:
+                <input type="radio" name="tdt" value="s"> SI   
+                <input type="radio" name="tdt" value="n"> NO 
+            </div>
+            <div id = "divTextLitros" style="display:none;">
+                <input type="text" id="capacidadLitros" name="capacidadLitros" required
+                minlength="4" maxlength="8" size="30" placeholder="Ingrese la capacidad en litros">
+            </div> 
+
+            <p>Categoria del producto:
+                <select id="categoria" name="categoria">
+                    <option value="">Seleccione</option>
+                    <option value="categoriaA">A</option>
+                    <option value="categoriaB">B</option>  
+                    <option value="categoriaC">C</option>  
+                  </select>
+            </p> 
+            <p>Procedencia:
+                <select id="procedencia" name="Procedencia">
+                    <option>Seleccione</option>
+                    <option value="procedenciaNac">Nacional</option>
+                    <option value="procedenciaInt">Internacional</option>  
+                  </select>
+            </p> 
+            <button id ="botonSubmit" name="Submit">submit</button>
+            <!-- <input type="submit" value="Submit"> -->
+        </fieldset>
+           </form>
+           <br><br>
+           <form id="my-resum">
+            <fieldset>
+            <legend>Resumen del inventario</legend>
+        </fieldset>
+           </form> 
+           <script>
+            function mostrar() {
+                var select = document.getElementById('select1')
+                if(select.value=="opcionTv"){
+                    document.getElementById('divTextLitros').style.display = 'none'
+                    document.getElementById('divTextPulgadas').style.display = ''
+                    document.getElementById('divTextTdt').style.display = ''
+                }
+                if(select.value=="opcionNevera"){
+                    document.getElementById('divTextPulgadas').style.display = 'none'
+                    document.getElementById('divTextTdt').style.display = 'none'
+                    document.getElementById('divTextLitros').style.display = ''                                     
+                }
+                if(select.value=="opcionElect"){
+                    document.getElementById('divTextPulgadas').style.display = 'none'
+                    document.getElementById('divTextLitros').style.display = 'none' 
+                    document.getElementById('divTextTdt').style.display = 'none'                                   
+                }            
+            }
+            </script>
+</body>
+</html>
