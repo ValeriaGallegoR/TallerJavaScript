@@ -26,21 +26,24 @@ function llenarListaTv(){
     var tdt=document.getElementById("divTextTdt").value;
     var procedencia=document.getElementById("procedencia").value;
     var categoria=document.getElementById("categoria").value;
+    var stock=document.getElementById("numStock").value;
     var listaTelevisor =new Array();
-    listaTelevisor.add(pulgadas,tdt,procedencia,categoria);
+    listaTelevisor.add(stock,pulgadas,tdt,procedencia,categoria);
 }
 
 function llenarListaNevera(){
     var litros=document.getElementById("divTextLitros").value;
     var procedencia=document.getElementById("procedencia").value;
     var categoria=document.getElementById("categoria").value;
+    var stock=document.getElementById("numStock").value;
     var listaNevera =new Array();
-    listaNevera.add(litros,procedencia,categoria);
+    return listaNevera.add(stock,litros,procedencia,categoria);
 }
 
 function llenarListaElectro(){
     var procedencia=document.getElementById("procedencia").value;
     var categoria=document.getElementById("categoria").value;
+    var stock=document.getElementById("numStock").value;
     var listaElect =new Array();
-    listaElect.add(procedencia,categoria);
+    return listaElect.add(stock,procedencia,categoria);
 }

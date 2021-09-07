@@ -11,10 +11,13 @@
 <body>
 <h1>INVENTARIO DE PRODUCTOS</h1>
    <br>
-   <!-- //action="/my-handling-form-page" method="post" -->
         <form id="my-form">
             <fieldset>
             <legend>Caracteristicas del producto</legend>
+            <div id="numStock" > Cantidad de productos: 
+                <input type="number" id="numStock" name="stock" required
+                minlength="1" maxlength="4" size="20" placeholder="Stock">
+            </div>
             <p>Tipo de producto:
                 <select id="select1" onChange="mostrarDatosProductos()">
                     <option value="">Seleccione</option>
@@ -25,7 +28,7 @@
             </p> 
             <div id="divTextPulgadas" style="display:none;">
                 <input type="text" id="pulgadas" name="pulgadas" required
-                minlength="4" maxlength="8" size="30" placeholder="Ingrese el número de las pulgadas">
+                minlength="2" maxlength="5" size="30" placeholder="Ingrese el número de las pulgadas">
             </div> 
             <div id = "divTextTdt" style="display:none;">El tv tiene tdt:
                 <input type="radio" name="tdt" value="s"> SI   
@@ -33,7 +36,7 @@
             </div>
             <div id = "divTextLitros" style="display:none;">
                 <input type="text" id="capacidadLitros" name="capacidadLitros" required
-                minlength="4" maxlength="8" size="30" placeholder="Ingrese la capacidad en litros">
+                minlength="2" maxlength="8" size="30" placeholder="Ingrese la capacidad en litros">
             </div> 
 
             <p>Categoria del producto:
@@ -52,14 +55,13 @@
                   </select>
             </p> 
             <button id ="botonSubmit" name="Submit">submit</button>
-            <!-- <input type="submit" value="Submit"> -->
         </fieldset>
            </form>
            <br><br>
            <form id="my-resum">
             <fieldset>
             <legend>Resumen del inventario</legend>
-            <script></script>
+            <script onchange="mostrarDatosProductos()"></script>
         </fieldset>
            </form> 
            <script src="./Modelos/menu.js"></script>
